@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import './Story.css'
+import './Story.css';
+import { ButtonInLine } from './Button';
 
-const Story = ( { story, columns }) => {
+const Story = ( { story, columns, onArchive }) => {
   const {
     title,
     url,
     author,
     num_comments,
     points,
+    objectID,
   } = story;
 
   return (
@@ -17,9 +19,17 @@ const Story = ( { story, columns }) => {
       </span>
       <span style={{ width: columns.author.width }}>{author}</span>
       <span style={{ width: columns.comments.width }}>{num_comments}</span>
-      <span style={{ width: columns.archive.width }}>{points}</span>
+      <span style={{ width: columns.points.width }}>{points}</span>
+      <span style={{ width: columns.archive.width }}>
+        <ButtonInLine onClick={() => onArchive(objectID)}>
+          Archive
+        </ButtonInLine>
+      </span>
     </div>
   );
 };
+
+
+
 
 export default Story;
