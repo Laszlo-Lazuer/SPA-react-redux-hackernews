@@ -1,28 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import store from './store';
 import App from './components/App';
 
-const stories = [
-  {
-    title: 'React',
-    url: 'https://facebook.github.io/react/',
-    author: 'Jordan Walke',
-    num_comments: 3,
-    points: 4,
-    objectID: 0,
-  }, {
-    title: 'React',
-    url: 'https://facebook.github.io/react/',
-    author: 'Jordan Walke',
-    num_comments: 3,
-    points: 4,
-    objectID: 1,
-  },
-];
+
 
 ReactDOM.render(
-  <App stories={stories} onArchive={(objectID) => {console.log(objectID);}} />,
+  <App stories={store.getState()} onArchive={(objectID) => {console.log(objectID);}} />,
   document.getElementById('root'));
 
 if (module.hot) {
