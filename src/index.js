@@ -17,7 +17,7 @@ const stories = [
     author: 'Jordan Walke',
     num_comments: 3,
     points: 4,
-    objectID: 0,
+    objectID: 1,
   },
 ];
 
